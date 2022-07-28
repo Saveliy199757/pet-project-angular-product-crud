@@ -1,0 +1,41 @@
+<h1 mat-dialog-title>Добавить продукт</h1>
+<div mat-dialog-content >
+  <mat-form-field appearance="outline">
+    <mat-label>Название продукта</mat-label>
+    <input matInput placeholder="Введите название">
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Категория</mat-label>
+    <mat-select placeholder="Выберете категорию">
+      <mat-option value="">Смартфоны</mat-option>
+      <mat-option value="">Ноутбуки</mat-option>
+      <mat-option value="">Вентиляторы</mat-option>
+      <mat-option value="">Бытовая техника</mat-option>
+      <mat-option value="">Другое</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Выбирете дату</mat-label>
+    <input matInput [matDatepicker]="picker">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <label><h1>Состояние продукта</h1></label>
+  <mat-radio-group  class="example-radio-group">
+    <mat-radio-button class="example-radio-button" *ngFor="let fresh of freshnessList" [value]="fresh">
+      {{fresh}}
+    </mat-radio-button>
+  </mat-radio-group>
+  <mat-form-field appearance="outline">
+    <mat-label>Цена</mat-label>
+    <input matInput type="number" placeholder="Введите название">
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Комментарий к ппродукту</mat-label>
+    <textarea matInput placeholder="Введите ваш комментарий к продукту"></textarea>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions [align]="'end'" >
+  <button mat-raised-button color="warn" mat-dialog-close >Закрыть</button>
+  <button mat-raised-button color="primary">Сохранить</button>
+</div>
