@@ -1,0 +1,23 @@
+{
+  "productLists": [
+    {
+      "productName": "Iphone 11 254 ГБ",
+      "category": "",
+      "date": "2022-07-28T21:00:00.000Z",
+      "freshness": "New",
+      "price": 59999,
+      "comment": "Отличный гаджет",
+      "id": 1
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
