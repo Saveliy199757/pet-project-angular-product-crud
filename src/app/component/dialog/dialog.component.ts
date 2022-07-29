@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { ApiJsonServerService} from "../../servises/api-json-server.service";
-import { MatDialogRef } from "@angular/material/dialog";
+import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 
 @Component({
   selector: 'app-dialog',
@@ -12,22 +12,27 @@ export class DialogComponent implements OnInit {
 
   freshnessList = ['New', 'Second Hand'];
   productForm!: FormGroup;
+  actionBtn: string = 'Сохранить'
 
-  constructor( private formBuilder: FormBuilder, private apiJsonSever: ApiJsonServerService, private matDialogRef: MatDialogRef<DialogComponent>) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private apiJsonSever: ApiJsonServerService,
+    @Inject(MAT_DIALOG_DATA) public editData: any,
+    private matDialogRef: MatDialogRef<DialogComponent>,
+  ) { }
 
   ngOnInit(): void {
     this.productForm = this.formBuilder.group({
-      productName: ['', Validators.required],
-      category: ['', Validators.required],
-      date: ['', Validators.required],
-      freshness: ['', Validators.required],
-      price: ['', Validators.required],
-      comment: ['', Validators.required],
+      productName: [this.editData ? this.editData.productName : '', Validators.required],
+      category: [this.editData ? this.editData.category : '', Validators.required],
+      date: [this.editData ? this.editData.date : '', Validators.required],
+      freshness: [this.editData ? this.editData.freshness : '', Validators.required],
+      price: [this.editData ? this.editData.price : '', Validators.required],
+      comment: [this.editData ? this.editData.comment : '', Validators.required],
     })
   }
 
   addProduct() {
-    if (this.productForm.value) {
       this.apiJsonSever.postProduct(this.productForm.value)
         .subscribe({
           next: () => {
@@ -39,6 +44,18 @@ export class DialogComponent implements OnInit {
             alert('Ошибка добавления!')
           }
         })
-    }
+  }
+  saveProduct() {
+    this.apiJsonSever.putProduct(this.productForm.value, this.editData.id)
+      .subscribe({
+        next: () => {
+          alert("Продукт обновлен.");
+          this.productForm.reset();
+          this.matDialogRef.close('update');
+        },
+        error: () => {
+          alert("Ошибка обновления");
+        }
+      })
   }
 }

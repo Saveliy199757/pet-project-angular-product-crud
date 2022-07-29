@@ -8,11 +8,11 @@
     <mat-form-field appearance="outline">
       <mat-label>Категория</mat-label>
       <mat-select formControlName="category" placeholder="Выберете категорию">
-        <mat-option value="">Смартфоны</mat-option>
-        <mat-option value="">Ноутбуки</mat-option>
-        <mat-option value="">Вентиляторы</mat-option>
-        <mat-option value="">Бытовая техника</mat-option>
-        <mat-option value="">Другое</mat-option>
+        <mat-option value="Смартфоны">Смартфоны</mat-option>
+        <mat-option value="Ноутбуки">Ноутбуки</mat-option>
+        <mat-option value="Вентиляторы">Вентиляторы</mat-option>
+        <mat-option value="Бытовая техника">Бытовая техника</mat-option>
+        <mat-option value="Другое">Другое</mat-option>
       </mat-select>
     </mat-form-field>
     <mat-form-field appearance="outline">
@@ -39,5 +39,8 @@
 </div>
 <div mat-dialog-actions [align]="'end'" >
   <button mat-raised-button color="warn" mat-dialog-close >Закрыть</button>
-  <button mat-raised-button color="primary" (click)="addProduct()">Сохранить</button>
+    <button *ngIf="editData else add"  mat-raised-button color="primary" [disabled]="!this.productForm.valid" (click)="saveProduct()">Обновить</button>
+   <ng-template #add>
+    <button  mat-raised-button color="primary" [disabled]="!this.productForm.valid" (click)="addProduct()">Сохранить</button>
+   </ng-template>
 </div>

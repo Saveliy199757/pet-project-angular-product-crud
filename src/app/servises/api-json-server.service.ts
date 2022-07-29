@@ -7,7 +7,7 @@ import { Observable } from "rxjs";
 })
 export class ApiJsonServerService {
 
-  baseUrl = "http://localhost:3000/productLists";
+  baseUrl = "http://localhost:3000/productLists/";
 
   constructor(private http: HttpClient) { }
 
@@ -18,4 +18,13 @@ export class ApiJsonServerService {
   getProduct(): Observable<Object> {
     return this.http.get(this.baseUrl)
   }
+
+  putProduct(data: any, id: any): Observable<Object> {
+    return this.http.put(this.baseUrl+id, data)
+  }
+
+  deleteProduct(id: any): Observable<Object> {
+    return this.http.delete(this.baseUrl+id);
+  }
+
 }
