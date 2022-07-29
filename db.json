@@ -8,6 +8,42 @@
       "price": 56999,
       "comment": "ffgdfg",
       "id": 1
+    },
+    {
+      "productName": "Asus vivobook",
+      "category": "Ноутбуки",
+      "date": "2022-07-29T21:00:00.000Z",
+      "freshness": "Second Hand",
+      "price": 45890,
+      "comment": "dfsdf",
+      "id": 2
+    },
+    {
+      "productName": "Redmi 3212",
+      "category": "Смартфоны",
+      "date": "2022-07-28T21:00:00.000Z",
+      "freshness": "New",
+      "price": 8259,
+      "comment": "derttr",
+      "id": 4
+    },
+    {
+      "productName": "HP Pavilion",
+      "category": "Ноутбуки",
+      "date": "2022-07-04T21:00:00.000Z",
+      "freshness": "Second Hand",
+      "price": 43890,
+      "comment": "fgrgret",
+      "id": 5
+    },
+    {
+      "productName": "Samsung phone",
+      "category": "Смартфоны",
+      "date": "2022-07-28T21:00:00.000Z",
+      "freshness": "New",
+      "price": 29999,
+      "comment": "ertertreret",
+      "id": 6
     }
   ],
   "comments": [

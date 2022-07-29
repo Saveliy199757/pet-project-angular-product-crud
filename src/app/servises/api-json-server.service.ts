@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
+import { Product } from "../interfaces/product.interface";
 
 @Injectable({
   providedIn: 'root'
@@ -11,20 +12,20 @@ export class ApiJsonServerService {
 
   constructor(private http: HttpClient) { }
 
-  postProduct(data: any): Observable<Object> {
-    return this.http.post(this.baseUrl, data);
+  postProduct(data: Product): Observable<Product> {
+    return this.http.post<Product>(this.baseUrl, data);
   }
 
-  getProduct(): Observable<Object> {
-    return this.http.get(this.baseUrl)
+  getProduct(): Observable<Product> {
+    return this.http.get<Product>(this.baseUrl)
   }
 
-  putProduct(data: any, id: any): Observable<Object> {
-    return this.http.put(this.baseUrl+id, data)
+  putProduct(data: Product, id: any): Observable<Product> {
+    return this.http.put<Product>(this.baseUrl+id, data)
   }
 
-  deleteProduct(id: any): Observable<Object> {
-    return this.http.delete(this.baseUrl+id);
+  deleteProduct(id: any): Observable<Product> {
+    return this.http.delete<Product>(this.baseUrl+id);
   }
 
 }

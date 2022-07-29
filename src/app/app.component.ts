@@ -5,6 +5,7 @@ import {ApiJsonServerService} from "./servises/api-json-server.service";
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
+import {Product} from "./interfaces/product.interface";
 
 @Component({
   selector: 'app-root',
@@ -33,7 +34,7 @@ export class AppComponent implements OnInit {
       }
     });
   }
-  editProduct(row: any) {
+  editProduct(row: Product) {
     this.dialog.open(DialogComponent, {
       width: "30%",
       data: row

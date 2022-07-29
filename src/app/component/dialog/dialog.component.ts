@@ -12,7 +12,6 @@ export class DialogComponent implements OnInit {
 
   freshnessList = ['New', 'Second Hand'];
   productForm!: FormGroup;
-  actionBtn: string = 'Сохранить'
 
   constructor(
     private formBuilder: FormBuilder,
