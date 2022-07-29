@@ -4,7 +4,7 @@
       "productName": "Iphone 11 246 GB",
       "category": "Смартфоны",
       "date": "2022-07-27T21:00:00.000Z",
-      "freshness": "New",
+      "freshness": "Second Hand",
       "price": 56999,
       "comment": "ffgdfg",
       "id": 1
@@ -19,15 +19,6 @@
       "id": 2
     },
     {
-      "productName": "Redmi 3212",
-      "category": "Смартфоны",
-      "date": "2022-07-28T21:00:00.000Z",
-      "freshness": "New",
-      "price": 8259,
-      "comment": "derttr",
-      "id": 4
-    },
-    {
       "productName": "HP Pavilion",
       "category": "Ноутбуки",
       "date": "2022-07-04T21:00:00.000Z",
@@ -37,13 +28,40 @@
       "id": 5
     },
     {
-      "productName": "Samsung phone",
+      "productName": "Nokia 3212443",
       "category": "Смартфоны",
       "date": "2022-07-28T21:00:00.000Z",
+      "freshness": "Second Hand",
+      "price": 45555,
+      "comment": "ewerwer",
+      "id": 7
+    },
+    {
+      "productName": "Asus rog 15 ",
+      "category": "Ноутбуки",
+      "date": "2022-07-28T21:00:00.000Z",
       "freshness": "New",
-      "price": 29999,
-      "comment": "ertertreret",
-      "id": 6
+      "price": 65990,
+      "comment": "fretert",
+      "id": 8
+    },
+    {
+      "productName": "Redmi Xstar",
+      "category": "Смартфоны",
+      "date": "2022-07-29T21:00:00.000Z",
+      "freshness": "Second Hand",
+      "price": 34555,
+      "comment": "dfretret",
+      "id": 9
+    },
+    {
+      "productName": "Iphone X 265 GB Red",
+      "category": "Смартфоны",
+      "date": "2022-07-11T21:00:00.000Z",
+      "freshness": "Second Hand",
+      "price": 45999,
+      "comment": "retret",
+      "id": 11
     }
   ],
   "comments": [

@@ -36,8 +36,8 @@ export class DialogComponent implements OnInit {
         .subscribe({
           next: () => {
             alert('Продукт добавлен успешно');
+            this.matDialogRef.close(this.productForm.value);
             this.productForm.reset();
-            this.matDialogRef.close('save');
           },
           error: () => {
             alert('Ошибка добавления!')
@@ -49,8 +49,12 @@ export class DialogComponent implements OnInit {
       .subscribe({
         next: () => {
           alert("Продукт обновлен.");
+          let resSaveData = {
+            value: this.productForm.value,
+            id: this.editData.id
+          }
+          this.matDialogRef.close(resSaveData);
           this.productForm.reset();
-          this.matDialogRef.close('update');
         },
         error: () => {
           alert("Ошибка обновления");

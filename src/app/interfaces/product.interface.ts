@@ -4,5 +4,6 @@ export interface Product {
   date: string,
   freshness: string,
   price: string,
-  comment: string
+  comment: string;
+  id?: number
 }

@@ -8,7 +8,7 @@ import { Product } from "../interfaces/product.interface";
 })
 export class ApiJsonServerService {
 
-  baseUrl = "http://localhost:3000/productLists/";
+  private baseUrl = "http://localhost:3000/productLists/";
 
   constructor(private http: HttpClient) { }
 

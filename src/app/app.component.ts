@@ -5,7 +5,7 @@ import {ApiJsonServerService} from "./servises/api-json-server.service";
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
-import {Product} from "./interfaces/product.interface";
+import {Product} from './interfaces/product.interface';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +14,8 @@ import {Product} from "./interfaces/product.interface";
 })
 export class AppComponent implements OnInit {
   displayedColumns: string[] = ['productName', 'category', 'date', 'freshness', 'price', 'comment', 'action'];
-  dataSource!: MatTableDataSource<any>;
+  dataSource!: MatTableDataSource<Product>;
+  products: Product[] = [];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -29,8 +30,9 @@ export class AppComponent implements OnInit {
     this.dialog.open(DialogComponent, {
       width: "30%"
     }).afterClosed().subscribe(value => {
-      if (value === 'save') {
-        this.getAllProducts();
+      if (value) {
+        this.products = [ ...this.products, value ];
+        this.initTableDataSource(this.products)
       }
     });
   }
@@ -38,9 +40,13 @@ export class AppComponent implements OnInit {
     this.dialog.open(DialogComponent, {
       width: "30%",
       data: row
-    }).afterClosed().subscribe(value => {
-      if (value === 'update') {
-        this.getAllProducts()
+    }).afterClosed().subscribe(res => {
+      if (res) {
+        let index = this.products.findIndex(item => item.id === res.id)
+        if (index > -1) {
+          this.products[index] = res.value;
+          this.initTableDataSource(this.products)
+        }
       }
     })
   }
@@ -48,21 +54,26 @@ export class AppComponent implements OnInit {
     this.apiJsonServer.getProduct()
       .subscribe({
         next: (res: any) => {
-          this.dataSource = new MatTableDataSource(res);
-          this.dataSource.paginator = this.paginator;
-          this.dataSource.sort = this.sort;
+          this.products = res;
+          this.initTableDataSource(this.products)
         },
         error: () => {
           alert('Ошибка запроса')
         }
       })
   }
+  initTableDataSource(data: Product[]) {
+    this.dataSource = new MatTableDataSource<Product>(data);
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+  }
   deleteProduct(id: number) {
     this.apiJsonServer.deleteProduct(id)
       .subscribe({
         next: () => {
           alert('Продукт удален успешно')
-          this.getAllProducts();
+          this.products = this.products.filter(product => product.id !== id);
+          this.initTableDataSource(this.products);
         },
         error: () => {
           alert('Ошибка удаления')
