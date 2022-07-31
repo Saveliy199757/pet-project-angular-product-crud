@@ -1,67 +1,58 @@
 {
   "productLists": [
     {
-      "productName": "Iphone 11 246 GB",
+      "productName": "Iphone 11",
       "category": "Смартфоны",
-      "date": "2022-07-27T21:00:00.000Z",
+      "date": "2022-07-07T21:00:00.000Z",
       "freshness": "Second Hand",
-      "price": 56999,
-      "comment": "ffgdfg",
+      "price": 32444,
+      "comment": "ewrrew",
       "id": 1
     },
     {
-      "productName": "Asus vivobook",
+      "productName": "Asus vivobook 256 GB WHITE",
       "category": "Ноутбуки",
-      "date": "2022-07-29T21:00:00.000Z",
-      "freshness": "Second Hand",
-      "price": 45890,
-      "comment": "dfsdf",
+      "date": "2022-07-27T21:00:00.000Z",
+      "freshness": "New",
+      "price": 65990,
+      "comment": "dfsfsfgdf",
       "id": 2
     },
     {
-      "productName": "HP Pavilion",
+      "productName": "cxxvxcv",
       "category": "Ноутбуки",
-      "date": "2022-07-04T21:00:00.000Z",
+      "date": "2022-07-14T21:00:00.000Z",
+      "freshness": "New",
+      "price": 3434,
+      "comment": "dfdsfsdf",
+      "id": 3
+    },
+    {
+      "productName": "Samsung galaxy",
+      "category": "Смартфоны",
+      "date": "2022-07-07T21:00:00.000Z",
       "freshness": "Second Hand",
-      "price": 43890,
-      "comment": "fgrgret",
+      "price": 12999,
+      "comment": "dfsdf",
+      "id": 4
+    },
+    {
+      "productName": "Redmi mi8",
+      "category": "Смартфоны",
+      "date": "2022-07-14T21:00:00.000Z",
+      "freshness": "New",
+      "price": 23599,
+      "comment": "new",
       "id": 5
     },
     {
-      "productName": "Nokia 3212443",
-      "category": "Смартфоны",
-      "date": "2022-07-28T21:00:00.000Z",
-      "freshness": "Second Hand",
-      "price": 45555,
-      "comment": "ewerwer",
-      "id": 7
-    },
-    {
-      "productName": "Asus rog 15 ",
+      "productName": "MacBook PRO 256 GB GOLD",
       "category": "Ноутбуки",
-      "date": "2022-07-28T21:00:00.000Z",
+      "date": "2022-07-30T21:00:00.000Z",
       "freshness": "New",
-      "price": 65990,
-      "comment": "fretert",
-      "id": 8
-    },
-    {
-      "productName": "Redmi Xstar",
-      "category": "Смартфоны",
-      "date": "2022-07-29T21:00:00.000Z",
-      "freshness": "Second Hand",
-      "price": 34555,
-      "comment": "dfretret",
-      "id": 9
-    },
-    {
-      "productName": "Iphone X 265 GB Red",
-      "category": "Смартфоны",
-      "date": "2022-07-11T21:00:00.000Z",
-      "freshness": "Second Hand",
-      "price": 45999,
-      "comment": "retret",
-      "id": 11
+      "price": 105000,
+      "comment": "new",
+      "id": 6
     }
   ],
   "comments": [
